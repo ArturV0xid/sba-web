@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block content %}
+<link rel="stylesheet" href="/static/css/index.css" />
+
+<div id="index-main-name-block">
+    <h1>
+        Ваш сервис по просмотру доходов
+    </h1>
+    <h3>
+        Всегда готовы вам помочь
+    </h3>
+    <button type="button" href="login" id="index-button">Перейти к просмотру</button>
+</div>
+<div id="index-icons-block">
+    <div class="index-icon-text">
+        <img src="/static/imgs/logo-icon.png" alt="pig" class="index-div-icon">
+        <p class="index-p">
+            Данный сервис был создан исключительно в учебных целях
+        </p>
+    </div>
+    <div class="index-icon-text">
+        <img src="/static/imgs/logo-icon.png" alt="pig" class="index-div-icon">
+        <p class="index-p">
+            Автоматическая поддержка до 2 банков
+        </p>
+    </div>
+    <div class="index-icon-text">
+        <img src="/static/imgs/logo-icon.png" alt="pig" class="index-div-icon">
+        <p class="index-p">
+            Сервис обеспечивает безопасность ваших личных данных
+        </p>
+    </div>
+</div>
+{% endblock %}
