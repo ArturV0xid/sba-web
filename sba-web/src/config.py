@@ -1,0 +1,3 @@
+DB_NAME = "database"
+
+SECRET_AUTH = "e95a3684b9982fcfd46eea716707f80cef515906eb49c4cb961dfde39a41ce21"
