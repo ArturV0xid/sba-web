@@ -1,18 +1,30 @@
 from typing import Optional
 
-from fastapi import Depends, Request
+from sqlalchemy.ext.asyncio import AsyncSession
+
+from fastapi import Depends, Request, BackgroundTasks
 from fastapi_users import BaseUserManager, IntegerIDMixin, exceptions, models, schemas
+from fastapi_users_db_sqlalchemy import SQLAlchemyUserDatabase
 
 from auth.models import User
-from auth.utils import get_user_db
+
+from database import get_async_session
 
 from config import SECRET_AUTH
 
 
 class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
     reset_password_token_secret = SECRET_AUTH
-    verification_token_secret = SECRET_AUTH
 
+    async def reset_password(
+        self,
+        token: None,
+        password: None, 
+        request: Optional[Request] = None
+    ) -> User:
+        self.user_db.update
+        return None
+    
     async def create(
         self,
         user_create: schemas.UC,
@@ -23,15 +35,15 @@ class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
         if existing_user is not None:
             raise exceptions.UserAlreadyExists()
 
-        user_dict = user_create.create_update_dict()
-        
+        user_dict = user_create.create_update_dict()        
         password = user_dict.pop("password")
         user_dict["hashed_password"] = self.password_helper.hash(password)
-
         created_user = await self.user_db.create(user_dict)
 
         return created_user
 
+async def get_user_db(session: AsyncSession = Depends(get_async_session)):
+    yield SQLAlchemyUserDatabase(session, User)
 
 async def get_user_manager(user_db=Depends(get_user_db)):
     yield UserManager(user_db)
