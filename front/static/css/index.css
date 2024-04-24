@@ -5,15 +5,16 @@ main{
     flex-direction: column;
 }
 #index-main-name-block{
-    width: 100%;
+    width: 60%;
     height: 70%;
-    background-image: url("../imgs/index-main.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin: 50px auto;
+        padding: 10px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 h1{
     font-size: 48px;
@@ -21,17 +22,27 @@ h1{
 h3{
     font-size: 24px;
 }
-#index-button{
+#index-link{
+    display: flex;
+    justify-content: center;
+    align-items: center;
     width: 500px;
     height: 120px;
-    background: mediumspringgreen;
+    background: lightblue;
     border-radius: 30px;
     font-size: 24px;
     margin-top: 64px;
+    color: black;
+    text-decoration: none;
+    border: 1px solid lightgray;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
 }
-#index-button:hover{
-    background-color: green;
+#index-link:hover{
+    background-color: lightskyblue;
+    cursor: pointer;
 }
+
 #index-icons-block{
     width: 100%;
     height: 30%;
@@ -43,7 +54,12 @@ h3{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    width: 280px;
+    width: 240px;
+    margin: 50px auto;
+        padding: 10px;
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 .index-div-icon{
     width: 48px;
@@ -52,3 +68,6 @@ h3{
 .index-p{
     width: 50%;
 }
+/*.data-block{*/
+/*    */
+/*}*/

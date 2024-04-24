@@ -19,3 +19,66 @@ input {
 .error-message {
   color: red;
 }
+.smallBtn {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+
+#menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  width: 160px;
+  top: 90px;
+  right: 175px;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+  display: none;
+  z-index: 999; /* Устанавливаем z-index, чтобы окошко было поверх всего */
+  border-radius: 5px;
+}
+
+.email {
+  font-style: italic;
+  color: #888;
+}
+
+.menuItem{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 14px;
+  padding: 5px 10px;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: coral;
+  margin-bottom: 5px;
+  width: 100%;
+}
+
+.menuItem:hover {
+  background-color: #0056b3;
+}
+#burger-menu-button{
+  width: 64px;
+  border: none;
+  background-color: transparent;
+}
+#burger-menu-button img{
+  height: 100%;
+  width: 100%;
+}
+#burger-menu-button:hover{
+  cursor: pointer;
+}
+body{
+        background: url("../imgs/index-main.jpg");
+        background-size: cover;
+      min-height: 100vh;
+    }

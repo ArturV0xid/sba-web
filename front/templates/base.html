@@ -3,9 +3,9 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/static/css/main.css" />
-    <link rel="stylesheet" href="/static/css/index-modal-button.css" />
-    <link rel="stylesheet" href="/static/css/base.css" />
+    <link rel="stylesheet" href="{{url_for('static', path='css/main.css')}}" />
+    <link rel="stylesheet" href="{{url_for('static', path='css/index-modal-button.css')}}"/>
+    <link rel="stylesheet" href=" {{url_for('static', path='css/base.css')}}" />
     <title>SBA</title>
   </head>
   <body>
@@ -20,34 +20,41 @@
           "
         >
           <a href="index"
-            ><img src="{{ url_for('static', path='imgs/logo-icon.png')}}" style="width: 48px"
+            ><img src="{{ url_for('static', path='imgs/logo.png')}}" style="width: 48px"
           /></a>
           <a href="index" style="font-size: 40px">SmartBank Analytics</a>
         </div>
         <div
           style="
-            width: 440px;
+            width: 340px;
             display: flex;
             justify-content: space-around;
             align-items: center;
           "
         >
-          <a href="login">
-            <u>Войти</u>
+          <a href="login" id="login-link">
+              <u>Войти</u>
           </a>
 
-          <a href="register">
-            <u><b>Регистрация</b></u>
+          <a href="register" id="register-link">
+              <u><b>Регистрация</b></u>
           </a>
 
-          <a href="index"
-            ><img src="{{ url_for('static', path='imgs/profile-icon.png')}}" style="width: 64px"
-          /></a>
+          <button id="burger-menu-button"> <img src="{{url_for('static', path='imgs/settings.png')}}" alt="icon" class="index-div-icon"></button> <!-- Вот здесь используется бургер-значок -->
+
         </div>
       </nav>
     </header>
 
     <main id="content">
+      <div id="menu" style="display: none;"> <!-- Меню изначально скрыто -->
+              <p class="email" >Почта:</p>
+              <p class="email" id="settings-email">aaa</p>
+              <button class="menuItem" onclick="goToWork()" >Данные</button>
+              <button class="menuItem" onclick="goToChangePassword()">Сменить пароль</button>
+              <button class="menuItem" onclick="logOut()">Выйти</button>
+      </div>
+
       {% block content %}{% endblock %}
     </main>
 
@@ -142,6 +149,6 @@
         </div>
       </nav>
     </footer>
-  <script src="/static/js/base.js"></script>
+  <script src="{{url_for('static', path='js/base.js')}}"></script>
   </body>
 </html>
