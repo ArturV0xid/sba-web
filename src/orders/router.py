@@ -2,13 +2,13 @@ from fastapi import APIRouter, Depends, HTTPException, UploadFile
 from sqlalchemy import insert, select
 from sqlalchemy.ext.asyncio import AsyncSession
 
-from src.database import get_async_session
+from database import get_async_session
 
-from src.auth.models import User
-from src.auth.base_config import current_user
+from auth.models import User
+from auth.base_config import current_user
 
-from src.orders.models import order
-from src.orders.processor import parse_pdf
+from orders.models import order
+from orders.processor import parse_pdf
 
 from datetime import date
 

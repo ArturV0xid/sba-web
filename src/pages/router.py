@@ -1,7 +1,7 @@
 from fastapi import APIRouter, Request, Depends
 from fastapi.templating import Jinja2Templates
 
-from src.orders.router import get_orders
+from orders.router import get_orders
 
 router = APIRouter(prefix="", tags=["Pages"])
 templates = Jinja2Templates(directory="src/templates")

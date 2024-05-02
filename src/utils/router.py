@@ -1,7 +1,7 @@
 from fastapi import APIRouter, BackgroundTasks, Depends
 
-from src.auth.base_config import current_user
-from src.auth.models import User
+from auth.base_config import current_user
+from auth.models import User
 
 # from src.utils.tasks import send_email
 

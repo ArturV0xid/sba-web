@@ -1,7 +1,7 @@
 import smtplib
 from email.message import EmailMessage
 
-from src.config import SMTP_PASS, SMTP_USER, SMTP_HOST, SMTP_PORT
+from config import SMTP_PASS, SMTP_USER, SMTP_HOST, SMTP_PORT
 
 
 def get_template(address):

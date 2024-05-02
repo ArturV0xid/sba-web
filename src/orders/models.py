@@ -1,6 +1,6 @@
 from sqlalchemy import ForeignKey, Date, Column, Integer, String, Table, Float
 
-from src.database import metadata
+from database import metadata
 
 order = Table(
     "order",

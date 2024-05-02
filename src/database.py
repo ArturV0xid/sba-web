@@ -6,7 +6,7 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker
 from sqlalchemy.pool import NullPool
 
-from src.config import DB_NAME
+from config import DB_NAME
 
 DATABASE_URL = f"sqlite+aiosqlite:///src/{DB_NAME}.db"
 Base = declarative_base()

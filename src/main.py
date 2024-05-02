@@ -1,10 +1,10 @@
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
 
-from src.pages.router import router as router_pages
-from src.orders.router import router as router_orders
-from src.auth.base_config import auth_backend, fastapi_users
-from src.auth.schemas import UserRead, UserCreate
+from pages.router import router as router_pages
+from orders.router import router as router_orders
+from auth.base_config import auth_backend, fastapi_users
+from auth.schemas import UserRead, UserCreate
 
 import warnings
 

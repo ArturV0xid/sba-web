@@ -6,11 +6,11 @@ from fastapi import Depends, Request, BackgroundTasks
 from fastapi_users import BaseUserManager, IntegerIDMixin, exceptions, models, schemas
 from fastapi_users_db_sqlalchemy import SQLAlchemyUserDatabase
 
-from src.auth.models import User
+from auth.models import User
 
-from src.database import get_async_session
+from database import get_async_session
 
-from src.config import SECRET_AUTH
+from config import SECRET_AUTH
 
 
 class UserManager(IntegerIDMixin, BaseUserManager[User, int]):
