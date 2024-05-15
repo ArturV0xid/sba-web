@@ -8,7 +8,7 @@ from sqlalchemy.pool import NullPool
 
 from config import DB_NAME
 
-DATABASE_URL = f"sqlite+aiosqlite:///src/{DB_NAME}.db"
+DATABASE_URL = f"sqlite+aiosqlite:///{DB_NAME}.db"
 Base = declarative_base()
 
 metadata = MetaData()

@@ -10,5 +10,5 @@ order = Table(
     Column("type", String),
     Column("amount", Float, nullable=False),
     Column("currency", String, nullable=False),
-    Column("user_id", Integer, ForeignKey("user.id", ondelete="CASCADE"))
+    Column("user_id", Integer, ForeignKey("user.id", ondelete="CASCADE")),
 )
